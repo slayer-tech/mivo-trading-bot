@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pocket Signal – Demo</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">S</div>
+        <div>
+          <h1>SLAYER TRADING</h1>
+          <p class="muted">Select a pair, expiration, and get a BUY/SELL signal</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <h2>CHOOSE PAIR</h2>
+        <div class="pair-select">
+          <select id="pairs" aria-label="Trading pair"></select>
+          <span id="availabilityBadge" class="badge">Checking…</span>
+        </div>
+        <p class="helper">Pairs that are currently unavailable by schedule will be disabled automatically.</p>
+      </section>
+
+      <section class="card">
+        <h2>EXPIRATION</h2>
+        <div class="time-select">
+          <select id="expirySelect" aria-label="Expiration">
+            <option value="5">5 seconds</option>
+            <option value="30">30 seconds</option>
+            <option value="60" selected>1 minute</option>
+            <option value="300">5 minutes</option>
+            <option value="900">15 minutes</option>
+          </select>
+          <div class="note">Expiration is measured from the moment the signal is generated.</div>
+        </div>
+      </section>
+
+      <section class="card focus">
+        <h2>GET SIGNAL</h2>
+        <button id="signalBtn" class="primary">GET SIGNAL</button>
+        <div id="signalBox" class="signal">
+          <div class="signal-title">Signal</div>
+          <div class="signal-body" id="signalText">—</div>
+          <div class="signal-meta" id="signalMeta"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
